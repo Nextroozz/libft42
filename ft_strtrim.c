@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseverin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mseverin <mseverin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:31:46 by mseverin          #+#    #+#             */
-/*   Updated: 2024/11/08 15:31:47 by mseverin         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:38:44 by mseverin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	in_set(char c, char const *set)
+int static	in_set(char c, char const *set)
 {
 	int	i;
 

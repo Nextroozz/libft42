@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t elementCount, size_t elementsize)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*out;
 	size_t	i;
 
 	i = 0;
-	out = malloc(elementCount * elementsize);
+	out = malloc(nmemb * size);
 	if (!out)
 		return (NULL);
-	while (i < elementsize)
+	while (i < size)
 	{
 		((unsigned char *)out)[i] = 0;
 		i++;

@@ -3,43 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseverin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mseverin <mseverin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:18:21 by mseverin          #+#    #+#             */
-/*   Updated: 2024/11/07 11:18:22 by mseverin         ###   ########.fr       */
+/*   Updated: 2024/11/11 16:27:26 by mseverin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_min(size_t nb1, int nb2)
-{
-	size_t	new;
-
-	new = nb2;
-	if (nb1 > new)
-	{
-		return (new);
-	}
-	return (nb1);
-}
-
-size_t	ft_strlcat(char *dest, const char *src, size_t nb)
+size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 {
 	size_t	i;
-	size_t	len;
-	int		initial;
+	size_t	dlen;
+	size_t	slen;
 
-	initial = ft_strlen(dest);
+	dlen = ft_strlen(dst);
+	slen = ft_strlen(src);
+	if (dlen >= siz)
+		return (siz + slen);
 	i = 0;
-	len = ft_strlen(dest);
-	while (src[i] && i < nb)
+	while (i < siz - dlen - 1 && src[i])
 	{
-		dest[len + i] = src[i];
+		dst[i + dlen] = src[i];
 		i++;
 	}
-	dest[len + i] = '\0';
-	return (ft_strlen(src) + ft_min(nb, initial));
+	if (dlen + i < siz)
+		dst[i + dlen] = 0;
+	return (slen + dlen);
 }
 /*#include <stdio.h>
 int main(int argc, char *argv[])

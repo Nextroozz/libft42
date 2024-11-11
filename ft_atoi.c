@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(char *nptr)
 {
 	int	i;
 	int	minus;
@@ -19,18 +19,18 @@ int	ft_atoi(char *str)
 	result = 0;
 	minus = 1;
 	i = 0;
-	while ((str[i] >= 7 && str[i] <= 15) || str[i] == ' ')
+	while ((nptr[i] >= 7 && nptr[i] <= 15) || nptr[i] == ' ')
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (str[i] == '-')
+		if (nptr[i] == '-')
 			minus *= -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{	
 		result *= 10;
-		result += str[i] - 48;
+		result += nptr[i] - 48;
 		i++;
 	}
 	return (minus * result);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseverin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mseverin <mseverin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:51:32 by mseverin          #+#    #+#             */
-/*   Updated: 2024/11/08 15:51:33 by mseverin         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:38:20 by mseverin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup_modif(const char *s, char c)
+char static	*ft_strdup_modif(const char *s, char c)
 {
 	char	*out;
 	int		i;
@@ -27,7 +27,7 @@ char	*ft_strdup_modif(const char *s, char c)
 	return (out);
 }
 
-int	count_words(char const *s, char c)
+int static	count_words(char const *s, char c)
 {
 	int	i;
 	int	res;
